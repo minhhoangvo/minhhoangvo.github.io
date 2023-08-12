@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+		.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-link {
+    font-size: 16px;
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+		/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* ... (previous styles) */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+    animation: fade-in 1.5s ease-in-out forwards; /* Apply the fade-in animation */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Move content slightly upward */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-image img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text {
+        padding: 20px;
+    }
+    .profile-image img {
+        max-width: 150px;
+    }
+}
+
+	</style>
+		
+    <title>Hồ Sơ Của Tôi</title>
+</head>
+<body>
+	<div class="language-toggle">
+    <a href="../en/index.html" class="language-link">EN</a>
+</div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">Về Tôi</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+    <div class="about-container">
+        <div class="profile-image">
+            <img src="../image/profile.jpg" alt="Your Name">
+        </div>
+        <div class="about-text">
+            <h1>Đôi Nét Về Bản Thân</h1>
+            <p id="typing-text">
+    Chào mừng đến với hồ sơ cá nhân của tôi! Tôi là một full-stack developer. 
+    Tôi chuyên về lập trình front-end và back-end, và yêu thích tạo ra các trang web phản hồi và thân thiện với người dùng. 
+    Mỗi khi không code, tôi thường khám phá các công nghệ mới, đọc sách và thưởng thức một tách cà phê ngon. 😚
+</p>
+
+
+        </div>
+    </div>
+</section>
+
+    <section id="portfolio">
+        <h1>Portfolio</h1>
+        <div class="project">
+            <img src="project1.jpg" alt="Project 1">
+            <h2>Project 1</h2>
+            <p>Description of project 1...</p>
+        </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Project 2">
+            <h2>Project 2</h2>
+            <p>Description of project 2...</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h1>Liên Hệ</h1>
+        <p>Feel free to reach out to me at: vominhhoang98@gmail.com</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+    
+
+
+
+<script>
+    const typingTextElement = document.getElementById("typing-text");
+    const textToType = typingTextElement.innerHTML;
+    typingTextElement.innerHTML = ""; // Clear the initial text
+
+    let index = 0;
+    const typingSpeed = 50; // Adjust the typing speed in milliseconds (lower value = faster)
+
+    function typeText() {
+        if (index < textToType.length) {
+            typingTextElement.innerHTML += textToType.charAt(index);
+            index++;
+            setTimeout(typeText, typingSpeed);
+        }
+    }
+
+    // Start the typing effect when the page loads
+    window.onload = typeText;
+    
+    
+</script>
+
+</body>
+</html>
